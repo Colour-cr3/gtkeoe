@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello World</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 4rem;
+      color: white;
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.7),
+                   0 0 40px rgba(0, 0, 0, 0.5);
+      animation: glow 2s infinite alternate ease-in-out;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #6a11cb, 0 0 30px #2575fc;
+      }
+      to {
+        text-shadow: 0 0 20px #fff, 0 0 40px #6a11cb, 0 0 60px #2575fc;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Hello, World!</h1>
+</body>
+</html>
