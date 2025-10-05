@@ -8,48 +8,109 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
+            color: #222;
             line-height: 1.6;
             margin: 0;
             padding: 0;
+            transition: background-color 0.4s ease, color 0.4s ease;
         }
+
         .container {
             width: 90%;
             max-width: 800px;
             margin: auto;
             padding: 10px;
         }
+
         header {
             background: #333;
             color: #fff;
             padding: 20px;
             text-align: center;
+            position: relative;
         }
+
         header img {
-            max-width: 150px;  /* Smaller version of the image */
+            max-width: 150px;
             height: auto;
             border-radius: 10%;
             margin-bottom: 10px;
-            cursor: pointer; /* Makes it clear that the image is clickable */
+            cursor: pointer;
+            transition: transform 0.3s ease;
         }
+
+        header img:hover {
+            transform: scale(1.05);
+        }
+
         section {
             background: #e7e7e7;
             padding: 15px;
             margin-bottom: 12px;
             border-radius: 6px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
         }
-        h1, h2 {
-            margin-top: 0;
+
+        section:hover {
+            transform: translateY(-3px);
+            background-color: #dcdcdc;
         }
+
         ul {
-        list-style-type: square; /* ✅ makes bullets squares */
-        padding-left: 20px;
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        a {
+            color: #0066cc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #ff6600;
+        }
+
+        /* Dark mode styles */
+        body.dark-mode {
+            background-color: #121212;
+            color: #e7e7e7;
+        }
+
+        body.dark-mode header {
+            background: #1e1e1e;
+        }
+
+        body.dark-mode section {
+            background: #2a2a2a;
+        }
+
+        body.dark-mode a {
+            color: #80b3ff;
+        }
+
+        /* Dark mode toggle button */
+        #themeToggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #555;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        #themeToggle:hover {
+            background: #777;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <!-- Wrap the image in an anchor tag for the clickable functionality -->
             <a href="./me-750-by-1000.png" target="_blank">
                 <img src="./me-225-by-300.png" alt="Patrick O'Connor">
             </a>
@@ -57,6 +118,8 @@
             <h2>Preferred Name: Patrick</h2>
             <p><a href="mailto:patrickdoconnor@lewisu.edu">patrickdoconnor@lewisu.edu</a></p>
             <p>Discord: devoidcolour</p>
+            <!-- 🌙 Dark Mode Toggle Button -->
+            <button id="themeToggle">🌙 Dark Mode</button>
         </header>
 
         <section>
@@ -66,17 +129,19 @@
 
         <section>
             <h2>What I Hope to Learn in this Course</h2>
-                <ul>
-        <li>How to code</li>
-        <li>Write a simple program from scratch</li>
+            <ul>
+                <li>How to code</li>
+                <li>Write a simple program from scratch</li>
+            </ul>
         </section>
 
         <section>
             <h2>My Favorite Hobbies / Activities</h2>
-                <ul>
-        <li><a href="https://en.wikipedia.org/wiki/Photography" target="_blank">Photography</a></li>
-        <li>Gaming</li>
-        <li>Watching youtube</li>
+            <ul>
+                <li><a href="https://en.wikipedia.org/wiki/Photography" target="_blank">Photography</a></li>
+                <li>Gaming</li>
+                <li>Watching YouTube</li>
+            </ul>
         </section>
 
         <section>
@@ -87,14 +152,25 @@
         <section>
             <p>Updated: 9/21/25</p>
         </section>
-        
     </div>
+
+    <!-- 💡 JavaScript Enhancement -->
+    <script>
+        const toggleButton = document.getElementById('themeToggle');
+        const body = document.body;
+
+        // Load saved theme preference
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark-mode');
+            toggleButton.textContent = '☀️ Light Mode';
+        }
+
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            const darkModeEnabled = body.classList.contains('dark-mode');
+            toggleButton.textContent = darkModeEnabled ? '☀️ Light Mode' : '🌙 Dark Mode';
+            localStorage.setItem('theme', darkModeEnabled ? 'dark' : 'light');
+        });
+    </script>
 </body>
 </html>
-
-
-
-
-
-
-
