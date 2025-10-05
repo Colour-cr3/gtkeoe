@@ -43,6 +43,11 @@
             transform: scale(1.05);
         }
 
+        h1 {
+            cursor: pointer; /* indicates clickability */
+            transition: color 0.4s ease; /* smooth color transition */
+        }
+
         section {
             background: #e7e7e7;
             padding: 15px;
@@ -114,11 +119,10 @@
             <a href="./me-750-by-1000.png" target="_blank">
                 <img src="./me-225-by-300.png" alt="Patrick O'Connor">
             </a>
-            <h1>Patrick O'Connor</h1>
+            <h1 id="name">Patrick O'Connor</h1>
             <h2>Preferred Name: Patrick</h2>
             <p><a href="mailto:patrickdoconnor@lewisu.edu">patrickdoconnor@lewisu.edu</a></p>
             <p>Discord: devoidcolour</p>
-            <!-- 🌙 Dark Mode Toggle Button -->
             <button id="themeToggle">🌙 Dark Mode</button>
         </header>
 
@@ -154,12 +158,11 @@
         </section>
     </div>
 
-    <!-- 💡 JavaScript Enhancement -->
     <script>
+        // 🌙 Dark Mode Toggle Script
         const toggleButton = document.getElementById('themeToggle');
         const body = document.body;
 
-        // Load saved theme preference
         if (localStorage.getItem('theme') === 'dark') {
             body.classList.add('dark-mode');
             toggleButton.textContent = '☀️ Light Mode';
@@ -170,6 +173,21 @@
             const darkModeEnabled = body.classList.contains('dark-mode');
             toggleButton.textContent = darkModeEnabled ? '☀️ Light Mode' : '🌙 Dark Mode';
             localStorage.setItem('theme', darkModeEnabled ? 'dark' : 'light');
+        });
+
+        // 💜 Name Color Change Script
+        const nameHeading = document.getElementById('name');
+        const favoriteColor = '#aa00ff';
+        const defaultColor = '#ffffff'; // original color from header
+
+        nameHeading.addEventListener('click', () => {
+            const currentColor = window.getComputedStyle(nameHeading).color;
+            // Toggle between purple and white
+            if (currentColor === 'rgb(170, 0, 255)') {
+                nameHeading.style.color = defaultColor;
+            } else {
+                nameHeading.style.color = favoriteColor;
+            }
         });
     </script>
 </body>
