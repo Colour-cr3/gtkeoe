@@ -173,9 +173,9 @@
     <h2>My Favorite Hobbies / Activities</h2>
     <ul>
       <li>
-        <a href="https://en.wikipedia.org/wiki/Photography" target="_blank"
-          >Photography</a
-        >
+      <a href="https://en.wikipedia.org/wiki/Photography" target="_blank"
+        >Photography</a
+      >
       </li>
       <li>Gaming</li>
       <li>Watching YouTube</li>
@@ -188,7 +188,7 @@
   </section>
 
   <footer>
-    <p>Updated: 9/21/25</p>
+    <p>Updated: 10/05/25</p>
   </footer>
 
   <script>
@@ -198,15 +198,15 @@
 
     if (localStorage.getItem("theme") === "dark") {
       body.classList.add("dark-mode");
-      toggleButton.textContent = "☀️ Light Mode";
+      toggleButton.textContent = "☀️";
     }
 
     toggleButton.addEventListener("click", () => {
       body.classList.toggle("dark-mode");
       const darkModeEnabled = body.classList.contains("dark-mode");
       toggleButton.textContent = darkModeEnabled
-        ? "☀️ Light Mode"
-        : "🌙 Dark Mode";
+        ? "☀️"
+        : "🌙";
       localStorage.setItem("theme", darkModeEnabled ? "dark" : "light");
     });
 
