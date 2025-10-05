@@ -1,194 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - Patrick O'Connor</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #222;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            transition: background-color 0.4s ease, color 0.4s ease;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Patrick O'Connor</title>
+  <style>
+    /* Base Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        .container {
-            width: 90%;
-            max-width: 800px;
-            margin: auto;
-            padding: 10px;
-        }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #fff;
+      color: #1d1d1f;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
 
-        header {
-            background: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-            position: relative;
-        }
+    header {
+      text-align: center;
+      padding: 60px 20px 40px;
+      background: linear-gradient(to bottom, #fafafa, #fff);
+    }
 
-        header img {
-            max-width: 150px;
-            height: auto;
-            border-radius: 10%;
-            margin-bottom: 10px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
+    header img {
+      width: 180px;
+      height: auto;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
 
-        header img:hover {
-            transform: scale(1.05);
-        }
+    header img:hover {
+      transform: scale(1.05);
+    }
 
-        h1 {
-            cursor: pointer; /* indicates clickability */
-            transition: color 0.4s ease; /* smooth color transition */
-        }
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: color 0.4s ease;
+    }
 
-        section {
-            background: #e7e7e7;
-            padding: 15px;
-            margin-bottom: 12px;
-            border-radius: 6px;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-        }
+    h2 {
+      font-size: 1.2rem;
+      color: #555;
+      margin-bottom: 15px;
+    }
 
-        section:hover {
-            transform: translateY(-3px);
-            background-color: #dcdcdc;
-        }
+    p, li {
+      font-size: 1rem;
+      color: #555;
+    }
 
-        ul {
-            list-style-type: square;
-            padding-left: 20px;
-        }
+    a {
+      color: #0071e3;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
 
-        a {
-            color: #0066cc;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
+    a:hover {
+      color: #005bb5;
+    }
 
-        a:hover {
-            color: #ff6600;
-        }
+    section {
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 24px;
+      background-color: #f5f5f7;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-        /* Dark mode styles */
-        body.dark-mode {
-            background-color: #121212;
-            color: #e7e7e7;
-        }
+    section:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    }
 
-        body.dark-mode header {
-            background: #1e1e1e;
-        }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
 
-        body.dark-mode section {
-            background: #2a2a2a;
-        }
+    ul li::before {
+      content: "•";
+      color: #0071e3;
+      margin-right: 8px;
+    }
 
-        body.dark-mode a {
-            color: #80b3ff;
-        }
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 0.9rem;
+      color: #888;
+    }
 
-        /* Dark mode toggle button */
-        #themeToggle {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: #555;
-            color: white;
-            border: none;
-            padding: 8px 12px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
+    /* Dark Mode */
+    body.dark-mode {
+      background-color: #000;
+      color: #f5f5f7;
+    }
 
-        #themeToggle:hover {
-            background: #777;
-        }
-    </style>
+    body.dark-mode header {
+      background: linear-gradient(to bottom, #111, #000);
+    }
+
+    body.dark-mode section {
+      background-color: #1c1c1e;
+    }
+
+    body.dark-mode a {
+      color: #0a84ff;
+    }
+
+    /* Buttons */
+    #themeToggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: #0071e3;
+      color: #fff;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #themeToggle:hover {
+      background-color: #005bb5;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <a href="./me-750-by-1000.png" target="_blank">
-                <img src="./me-225-by-300.png" alt="Patrick O'Connor">
-            </a>
-            <h1 id="name">Patrick O'Connor</h1>
-            <h2>Preferred Name: Patrick</h2>
-            <p><a href="mailto:patrickdoconnor@lewisu.edu">patrickdoconnor@lewisu.edu</a></p>
-            <p>Discord: devoidcolour</p>
-            <button id="themeToggle">🌙 Dark Mode</button>
-        </header>
+  <header>
+    <a href="./me-750-by-1000.png" target="_blank">
+      <img src="./me-225-by-300.png" alt="Patrick O'Connor" />
+    </a>
+    <h1 id="name">Patrick O'Connor</h1>
+    <h2>Preferred Name: Patrick</h2>
+    <p><a href="mailto:patrickdoconnor@lewisu.edu">patrickdoconnor@lewisu.edu</a></p>
+    <p>Discord: devoidcolour</p>
+    <button id="themeToggle">🌙 Dark Mode</button>
+  </header>
 
-        <section>
-            <h2>Introduction</h2>
-            <p>I am an information technologies major and my parents and I live here in Romeoville. My mom is a home health nurse and my dad designs the IT infrastructure for hospitals.</p>
-        </section>
+  <section>
+    <h2>Introduction</h2>
+    <p>
+      I am an information technologies major and my parents and I live here in
+      Romeoville. My mom is a home health nurse and my dad designs the IT
+      infrastructure for hospitals.
+    </p>
+  </section>
 
-        <section>
-            <h2>What I Hope to Learn in this Course</h2>
-            <ul>
-                <li>How to code</li>
-                <li>Write a simple program from scratch</li>
-            </ul>
-        </section>
+  <section>
+    <h2>What I Hope to Learn in this Course</h2>
+    <ul>
+      <li>How to code</li>
+      <li>Write a simple program from scratch</li>
+    </ul>
+  </section>
 
-        <section>
-            <h2>My Favorite Hobbies / Activities</h2>
-            <ul>
-                <li><a href="https://en.wikipedia.org/wiki/Photography" target="_blank">Photography</a></li>
-                <li>Gaming</li>
-                <li>Watching YouTube</li>
-            </ul>
-        </section>
+  <section>
+    <h2>My Favorite Hobbies / Activities</h2>
+    <ul>
+      <li>
+        <a href="https://en.wikipedia.org/wiki/Photography" target="_blank"
+          >Photography</a
+        >
+      </li>
+      <li>Gaming</li>
+      <li>Watching YouTube</li>
+    </ul>
+  </section>
 
-        <section>
-            <h2>Fun Fact</h2>
-            <p>I’ve built two computers.</p>
-        </section>
-        
-        <section>
-            <p>Updated: 9/21/25</p>
-        </section>
-    </div>
+  <section>
+    <h2>Fun Fact</h2>
+    <p>I’ve built two computers.</p>
+  </section>
 
-    <script>
-        // 🌙 Dark Mode Toggle Script
-        const toggleButton = document.getElementById('themeToggle');
-        const body = document.body;
+  <footer>
+    <p>Updated: 9/21/25</p>
+  </footer>
 
-        if (localStorage.getItem('theme') === 'dark') {
-            body.classList.add('dark-mode');
-            toggleButton.textContent = '☀️ Light Mode';
-        }
+  <script>
+    // 🌙 Dark Mode Toggle
+    const toggleButton = document.getElementById("themeToggle");
+    const body = document.body;
 
-        toggleButton.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            const darkModeEnabled = body.classList.contains('dark-mode');
-            toggleButton.textContent = darkModeEnabled ? '☀️ Light Mode' : '🌙 Dark Mode';
-            localStorage.setItem('theme', darkModeEnabled ? 'dark' : 'light');
-        });
+    if (localStorage.getItem("theme") === "dark") {
+      body.classList.add("dark-mode");
+      toggleButton.textContent = "☀️ Light Mode";
+    }
 
-        // 💜 Name Color Change Script
-        const nameHeading = document.getElementById('name');
-        const favoriteColor = '#aa00ff';
-        const defaultColor = '#ffffff'; // original color from header
+    toggleButton.addEventListener("click", () => {
+      body.classList.toggle("dark-mode");
+      const darkModeEnabled = body.classList.contains("dark-mode");
+      toggleButton.textContent = darkModeEnabled
+        ? "☀️ Light Mode"
+        : "🌙 Dark Mode";
+      localStorage.setItem("theme", darkModeEnabled ? "dark" : "light");
+    });
 
-        nameHeading.addEventListener('click', () => {
-            const currentColor = window.getComputedStyle(nameHeading).color;
-            // Toggle between purple and white
-            if (currentColor === 'rgb(170, 0, 255)') {
-                nameHeading.style.color = defaultColor;
-            } else {
-                nameHeading.style.color = favoriteColor;
-            }
-        });
-    </script>
+    // 💜 Click name to change to favorite color
+    const nameHeading = document.getElementById("name");
+    const favoriteColor = "#aa00ff";
+    const defaultColor = "#1d1d1f";
+
+    nameHeading.addEventListener("click", () => {
+      const currentColor = window.getComputedStyle(nameHeading).color;
+      if (currentColor === "rgb(170, 0, 255)") {
+        nameHeading.style.color = defaultColor;
+      } else {
+        nameHeading.style.color = favoriteColor;
+      }
+    });
+  </script>
 </body>
 </html>
